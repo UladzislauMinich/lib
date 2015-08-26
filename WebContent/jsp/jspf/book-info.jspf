@@ -1,0 +1,77 @@
+
+<h1 align="center">${newBook.name }-${newBook.authorName }
+	${newBook.authorSurname }</h1>
+
+			<table cellspacing="8px" cellpadding="8px">
+				<tr>
+				<td valign="top" rowspan="6"><img width="205px" src="${newBook.picturePath }">
+		</td>
+					<td width="15%"><b> <fmt:message key="book.author" />
+					</b> ${newBook.authorName } ${newBook.authorSurname }</td>
+				</tr>
+				<tr>
+					<td><b> <fmt:message key="book.name" />
+					</b> : ${newBook.name }</td>
+				</tr>
+				<tr>
+					<td><b> <fmt:message key="book.genre" />
+					</b> : ${newBook.genre }</td>
+					</td>
+				</tr>
+				<tr>
+					<td><b> <fmt:message key="book.impritYear" />
+					</b>: ${newBook.impritYear }</td>
+				</tr>
+				<tr>
+					<td><b> <fmt:message key="book.amount" />
+					</b>: ${newBook.amount }</td>
+				</tr>
+				<tr>
+					<td><b> <fmt:message key="book.onlyReadingHall" />
+					</b> : <c:choose>
+							<c:when test="${newBook.onlyReadingHall == true}">
+								<fmt:message key="yes" />
+							</c:when>
+							<c:otherwise>
+								<fmt:message key="no" />
+							</c:otherwise>
+						</c:choose></td>
+				</tr>
+				<tr>
+
+					<td valign="top" colspan=3 align=justify><b><fmt:message
+								key="book.description" /></b><br> ${newBook.description}</td>
+				</tr>
+				<tr align="center">
+					<td width="33%"><c:if
+							test="${sessionScope.user.adminFlag ==1}">
+							<form action="controller" method="post">
+								<input id="buttonLogOut" type="submit"
+									value="<fmt:message key="book.edit" />" /> <input
+									type="hidden" name="idBook" value="${newBook.idBook}" /><input
+									type="hidden" name="command" value="to_edit" />
+							</form>
+						</c:if></td>
+					<td width="33%"><form action="controller" method="post">
+							<input id="buttonLogOut" type="submit"
+								value="<fmt:message key="book.add-toorder" />" /> <input
+								type="hidden" name="idBook" value="${newBook.idBook}" /><input
+								type="hidden" name="command" value="add_book_to_basket" /> <input
+								type="hidden" name="user" value="${sessionScope.user}" /> <input
+								type="hidden" name="books" value="${books}" /> <input
+								type="hidden" name="basketBooks"
+								value="${sessionScope.basketBooks}" /> <input type="hidden"
+								name="amount" value="${sessionScope.amount}" />
+						</form></td>
+					<td width="33%"><c:if
+							test="${sessionScope.user.adminFlag ==1}">
+							<form>
+								<input id="buttonLogOut" type="submit"
+									value="<fmt:message key="book.delete" />" /> <input
+									type="hidden" name="command" value="delete_book" /><input
+									type="hidden" name="idBook" value="${newBook.idBook}" />
+							</form>
+						</c:if></td>
+				</tr>
+			</table>
+	

@@ -1,0 +1,21 @@
+<h1 align="left" style="padding-left: 1.7em;">
+	<fmt:message key="chooseLanguage" />
+</h1>
+<table border="0" style="padding-left: 1.7em;" >
+	<tr>
+		<td>
+			<form method="POST" action="controller">
+				<input type="hidden" name="command" value="change_language"  /> <input
+					id="button1" type="submit" name="locale" value="ru"  />
+					 
+			</form>
+		</td>
+		<td>
+			<form method="POST" action="controller">
+				<input type="hidden" name="command" value="change_language" /> <input
+					id="button1" type="submit" name="locale" value="en" />
+			</form>
+		</td>
+	</tr>
+</table>
+

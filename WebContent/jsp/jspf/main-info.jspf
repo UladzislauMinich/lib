@@ -1,0 +1,7 @@
+
+<h1 align="center" style="width: 80%; color: olive;"><fmt:message key="title.login" />!</h1>
+<h1
+	style="text-align: justify; width: 80%; color: olive;">
+	<p><fmt:message key="main.info.part_one" /></p>
+	<p><fmt:message key="main.info.part_two" /></p>
+</h1>

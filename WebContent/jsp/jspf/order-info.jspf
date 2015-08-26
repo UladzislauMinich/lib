@@ -1,0 +1,17 @@
+<table border="1"   width="100%" style="border-collapse: collapse; ">
+	<c:forEach var="book" items="${order.books}">
+		<tr bordercolor="red">
+			<td align="center" width="150">${book.name }</td>
+			<td align="center">${book.authorName} ${book.authorSurname }</td>
+			<td align="center" width="100"><c:choose>
+					<c:when test="${book.onlyReadingHall == true}">
+						<fmt:message key="yes" />
+					</c:when>
+					<c:otherwise>
+						<fmt:message key="no" />
+					</c:otherwise>
+				</c:choose></td>
+		</tr>
+	</c:forEach>
+
+</table>

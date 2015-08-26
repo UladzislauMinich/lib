@@ -1,0 +1,5 @@
+
+<form action="${pageContext.request.contextPath}/controller" method="post" >            
+    <input id="button8" type="submit" name="toIndex" value="<fmt:message key="toIndex" />" />           
+    <input type="hidden" name="command" value="to_index"/>
+</form>
